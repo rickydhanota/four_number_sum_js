@@ -9,7 +9,7 @@ function fourNumberSum(arr, targetSum) {
             var currentSum = arr[i] + arr[j]; //Sum up 
             var difference = targetSum - currentSum; //Subtract by the target to find the difference
             if (difference in allPairSums){//Checking to see if the difference exists in the allPairSums dictionary, and on the first pass it wont exist because there should be nothing in there
-                for(var pair of allPairSums[difference]){
+                for(var pair of allPairSums[difference]){// the of operator allows us to iterate over an object
                     quadruplets.push(pair.concat( [arr[i], arr[j]] ) );//.concat merges 2 arrays
                 }
             }
@@ -29,3 +29,4 @@ function fourNumberSum(arr, targetSum) {
 }
       
 console.log(fourNumberSum([7,6,4,-1,1,2], 16));
+
