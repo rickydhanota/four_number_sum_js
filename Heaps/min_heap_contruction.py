@@ -20,3 +20,12 @@
 # remove(): 2 # [6, 7, 8, 8, 24, 391, 24, 56, 12, 24, 48, 41]
 # peek(): 6
 # insert(87): - [6, 7, 8, 8, 24, 391, 24, 56, 12, 24, 48, 41, 76, 87]
+
+class MinHeap:
+    def __init__(self, arrar):
+        self.heap = self.buildHeap(array)
+    
+    def buildHeap(self, array):
+        pass
+
+    
