@@ -28,4 +28,17 @@ class MinHeap:
     def buildHeap(self, array):
         pass
 
-    
+    def siftdown(self):
+        pass
+
+    def siftup(self):
+        pass
+
+    def peek(self):
+        pass
+
+    def remove(self):
+        pass
+
+    def insert(self, value):
+        pass
