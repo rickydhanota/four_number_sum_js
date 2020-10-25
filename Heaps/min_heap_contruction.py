@@ -21,7 +21,7 @@
 # peek(): 6
 # insert(87): - [6, 7, 8, 8, 24, 391, 24, 56, 12, 24, 48, 41, 76, 87]
 
-class MinHeap:
+class MinHeap: # A min heap means in the branch of things the root node is the smaller value in comparison to its children nodes. A heap is not sorted
     def __init__(self, arrar):
         self.heap = self.buildHeap(array)
     
@@ -68,3 +68,7 @@ class MinHeap:
     
     def swap(self, i, j, heap):
         heap[i], heap[j] = heap[j], heap[i]
+
+#In order to find the first child of our root node, we do 2i + 1, and to find the second child we do 2i + 2. The root node is i = 0, in other words, it is our initial index position
+
+#To find the parent node of a child, we do ((i-1)//2) to find the "floor" of the parent node. 
