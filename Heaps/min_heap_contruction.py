@@ -22,7 +22,7 @@
 # insert(87): - [6, 7, 8, 8, 24, 391, 24, 56, 12, 24, 48, 41, 76, 87]
 
 class MinHeap: # A min heap means in the branch of things the root node is the smaller value in comparison to its children nodes. A heap is not sorted
-    def __init__(self, arrar):
+    def __init__(self, array):
         self.heap = self.buildHeap(array)
     
     def buildHeap(self, array):
