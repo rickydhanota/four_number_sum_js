@@ -29,6 +29,7 @@ class MinHeap: # A min heap means in the branch of things the root node is the s
         firstParentIdx = (len(array) - 2) // 2 #floor devision, it just rounds down
         for currentIdx in reversed(range(firstParentIdx + 1)):
             self.siftDown(currentIdx, len(array) - 1, array)
+        print("This is from def buildHeap", array)
         return array
 
     def siftDown(self, currentIdx, endIdx, heap):
@@ -52,19 +53,23 @@ class MinHeap: # A min heap means in the branch of things the root node is the s
             self.swap(currentIdx, parentIdx, heap)
             currentIdx = parentIdx
             parentIdx = (currentIdx - 1) // 2
+        print("This is from def siftUp", self.heap)
 
     def peek(self):
+        print("This is from def peek", self.heap[0])
         return self.heap[0]
 
     def remove(self):
         self.swap(0, len(self.heap) - 1, self.heap)
         valueToRemove = self.heap.pop()
         self.siftDown(0, len(self.heap) - 1, self.heap)
+        print("This is from def remove", valueToRemove)
         return valueToRemove
 
     def insert(self, value):
         self.heap.append(value)
         self.siftUp(len(self.heap) - 1, self.heap)
+        print("This is from def insert", self.heap)
     
     def swap(self, i, j, heap):
         heap[i], heap[j] = heap[j], heap[i]
@@ -72,3 +77,12 @@ class MinHeap: # A min heap means in the branch of things the root node is the s
 #In order to find the first child of our root node, we do 2i + 1, and to find the second child we do 2i + 2. The root node is i = 0, in other words, it is our initial index position
 
 #To find the parent node of a child, we do ((i-1)//2) to find the "floor" of the parent node. 
+
+heap1 = MinHeap([48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41])
+heap1.insert(76)
+heap1.peek()
+heap1.remove()
+heap1.peek()
+heap1.remove()
+heap1.peek()
+heap1.insert(87)
