@@ -25,6 +25,7 @@ class MinHeap: # A min heap means in the branch of things the root node is the s
     def __init__(self, array):
         self.heap = self.buildHeap(array)
     
+    # O(n) time | O(1) space
     def buildHeap(self, array):
         firstParentIdx = (len(array) - 2) // 2 #floor devision, it just rounds down
         for currentIdx in reversed(range(firstParentIdx + 1)):
@@ -32,6 +33,7 @@ class MinHeap: # A min heap means in the branch of things the root node is the s
         print("This is from def buildHeap", array)
         return array
 
+    # O(log(n)) time | O(1) space
     def siftDown(self, currentIdx, endIdx, heap):
         childOneIdx = currentIdx * 2 + 1
         while childOneIdx <= endIdx:
@@ -47,6 +49,7 @@ class MinHeap: # A min heap means in the branch of things the root node is the s
             else:
                 return
 
+    # O(log(n)) time | O(1) space
     def siftUp(self, currentIdx, heap):
         parentIdx = (currentIdx - 1) // 2
         while currentIdx > 0 and heap[currentIdx] < heap[parentIdx]:
@@ -55,10 +58,12 @@ class MinHeap: # A min heap means in the branch of things the root node is the s
             parentIdx = (currentIdx - 1) // 2
         print("This is from def siftUp", self.heap)
 
+    # O(1) time | O(1) time, constant time operation
     def peek(self):
         print("This is from def peek", self.heap[0])
         return self.heap[0]
 
+    # O(log(n)) time | O(1) space
     def remove(self):
         self.swap(0, len(self.heap) - 1, self.heap)
         valueToRemove = self.heap.pop()
@@ -66,6 +71,7 @@ class MinHeap: # A min heap means in the branch of things the root node is the s
         print("This is from def remove", valueToRemove)
         return valueToRemove
 
+    # O(log(n)) time | O(1) space
     def insert(self, value):
         self.heap.append(value)
         self.siftUp(len(self.heap) - 1, self.heap)
